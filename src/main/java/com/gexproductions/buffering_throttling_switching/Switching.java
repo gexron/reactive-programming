@@ -12,7 +12,7 @@ public class Switching {
                         ThreadLocalRandom.current().nextInt(1000), TimeUnit.MILLISECONDS)
                 );
 
-        Observable.interval(2, TimeUnit.SECONDS)
+        Observable.interval(3, TimeUnit.SECONDS)
                 .switchMap(s -> source.doOnDispose(
                         () -> System.out.println("Disposing and restarting!"))
                 )
